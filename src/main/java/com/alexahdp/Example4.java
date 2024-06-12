@@ -13,12 +13,13 @@ public class Example4 {
             threads.add(new FactorialThread(inputNumber));
         }
         for (Thread thread : threads) {
+            thread.setDaemon(true);
             thread.start();
         }
         for (Thread thread : threads) {
             try {
                 // because calc may take a long time, kill the thread when the main thread exits
-                thread.setDaemon(true);
+
                 // param - timeout in milliseconds
                 thread.join(2000);
             } catch (InterruptedException e) {

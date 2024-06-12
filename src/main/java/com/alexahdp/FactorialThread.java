@@ -19,6 +19,7 @@ public class FactorialThread extends Thread {
 
     public BigInteger factorial(Long n) {
         BigInteger tmpResult = BigInteger.ONE;
+        tmpResult.m
         for (long i = n; i > 0; i--) {
             tmpResult = tmpResult.multiply(BigInteger.valueOf(i));
         }
